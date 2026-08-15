@@ -4,6 +4,9 @@
     "draft": true,
     "tokenRef": "GITHUB_TOKEN"
   },
+  "npm": {
+    "publish": false
+  },
   "git": {
     "commit": true,
     "commitMessage": "chore: release ${version}",
