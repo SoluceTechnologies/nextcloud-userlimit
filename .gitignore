@@ -22,3 +22,8 @@ signature.json
 
 /vendor/
 composer.lock
+
+.vscode
+/node_modules
+/.pnp
+.pnp.js
