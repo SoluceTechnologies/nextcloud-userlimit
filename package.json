@@ -1,6 +1,6 @@
 {
   "name": "nextcloud-userlimit",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "release": "release-it"
   },

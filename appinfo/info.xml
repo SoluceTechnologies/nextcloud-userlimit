@@ -14,7 +14,7 @@ the registration app. Default cap is 5; change it at runtime with:
 
 Set the value to 0 (or negative) to disable the cap without uninstalling.
     ]]></description>
-    <version>1.0.0</version>
+    <version>0.0.1</version>
     <licence>agpl</licence>
     <author>you</author>
     <namespace>UserLimit</namespace>
