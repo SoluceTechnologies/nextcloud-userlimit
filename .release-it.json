@@ -4,9 +4,7 @@
     "draft": true,
     "tokenRef": "GITHUB_TOKEN"
   },
-  "npm": {
-    "publish": false
-  },
+  "npm": false,
   "git": {
     "commit": true,
     "commitMessage": "chore: release ${version}",
@@ -54,7 +52,7 @@
         {
           "file": "package.json",
           "path": "version",
-          "type": "text/yaml"
+          "type": "application/json"
         },
         {
           "file": "appinfo/info.xml",
