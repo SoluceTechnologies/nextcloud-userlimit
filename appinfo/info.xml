@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>userlimit</id>
+    <name>User Limit</name>
+    <summary>Blocks user creation past a configurable per-instance ceiling</summary>
+    <description><![CDATA[
+Enforces a hard cap on the total number of users an instance may hold.
+Hooks BeforeUserCreatedEvent and aborts creation once the configured
+limit is reached. Applies to the web UI, occ, the provisioning API and
+the registration app. Default cap is 5; change it at runtime with:
+
+    occ config:app:set userlimit limit --value=<N>
+
+Set the value to 0 (or negative) to disable the cap without uninstalling.
+    ]]></description>
+    <version>1.0.0</version>
+    <licence>agpl</licence>
+    <author>you</author>
+    <namespace>UserLimit</namespace>
+    <category>tools</category>
+    <bugs>https://example.invalid/userlimit/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="29" max-version="34"/>
+    </dependencies>
+</info>
