@@ -21,6 +21,6 @@ Set the value to 0 (or negative) to disable the cap without uninstalling.
     <category>tools</category>
     <bugs>https://example.invalid/userlimit/issues</bugs>
     <dependencies>
-        <nextcloud min-version="29" max-version="34"/>
+        <nextcloud min-version="29" max-version="35"/>
     </dependencies>
 </info>
