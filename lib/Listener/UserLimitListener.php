@@ -15,27 +15,27 @@ use Psr\Log\LoggerInterface;
 /**
  * @template-implements IEventListener<BeforeUserCreatedEvent>
  */
-class UserLimitListener implements IEventListener {
+class UserLimitListener implements IEventListener
+{
 
     private const APP_ID = 'userlimit';
     private const CONFIG_KEY = 'limit';
     private const DEFAULT_LIMIT = 5;
 
     public function __construct(
-        private IUserManager $userManager,
-        private IAppConfig $appConfig,
+        private IUserManager    $userManager,
+        private IAppConfig      $appConfig,
         private LoggerInterface $logger,
-    ) {
+    )
+    {
     }
 
-    public function handle(Event $event): void {
+    public function handle(Event $event): void
+    {
         if (!($event instanceof BeforeUserCreatedEvent)) {
             return;
         }
 
-        // NC 34's typed AppConfig throws AppConfigTypeConflictException when the
-        // stored value's type doesn't match the read type. Degrade to the
-        // default rather than fataling every user creation.
         try {
             $limit = $this->appConfig->getValueInt(
                 self::APP_ID,
@@ -50,7 +50,6 @@ class UserLimitListener implements IEventListener {
             $limit = self::DEFAULT_LIMIT;
         }
 
-        // 0 or negative disables the cap entirely.
         if ($limit <= 0) {
             $this->logger->debug('User limit disabled (limit <= 0), allowing.');
             return;
